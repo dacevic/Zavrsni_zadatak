@@ -11,8 +11,6 @@ $statementComments->execute();
 $statementComments->setFetchMode(PDO::FETCH_ASSOC);
 
 $comments = $statementComments->fetchAll();
-
-
 ?>
 <button class="btn btn-default" id="button" onclick="myFunction()">Hide Comments</button>
 
