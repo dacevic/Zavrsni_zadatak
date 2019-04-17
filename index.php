@@ -16,25 +16,34 @@
     <!-- Custom styles for this template -->
     <link href="styles/blog.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-<?php include "header.php" ?>
+<?php include("header.php"); ?>
 
 <main role="main" class="container">
 
-
     <div class="row">
 
-    <?php include "posts.php" ?>
+        <div class="col-sm-8 blog-main">
 
-        <?php include "sidebar.php" ?> <!-- /.blog-sidebar -->
+            <?php include('posts.php'); ?>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+
+</div><!-- /.blog-main -->
+
+<?php include('sidebar.php'); ?><!-- /.blog-sidebar -->
 
     </div><!-- /.row -->
 
 </main><!-- /.container -->
 
-<?php include "footer.php" ?>
+<?php include('footer.php'); ?>
 </body>
 </html>
