@@ -13,9 +13,9 @@
                 <h4>Latest posts</h4>
                 <ul>
                     <?php foreach($posts as $post){ ;?>
-                    <li>
+                        <li>
                         <a href="single-post.php?post_id=<?php echo($post['id']) ?>"><p><?php echo ($post['title']); ?><p></a>
-                    </li> 
+                    </li>
                     <?php } ;?>
                 </ul>
             </div>
