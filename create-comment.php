@@ -4,13 +4,13 @@
     if(!empty($_POST['author'])){
         $author = $_POST['author'];
     } else{
-        header("Location: http://localhost:8000/single-post.php?post_id=$id&required=false");
+        header("Location: http://localhost:8080/single-post.php?post_id=$id&required=false");
         exit;
     }
     if(!empty($_POST['comment'])){
         $comment = $_POST['comment'];
     } else {
-        header("Location: http://localhost:8000/single-post.php?post_id=$id&required=false");
+        header("Location: http://localhost:8080/single-post.php?post_id=$id&required=false");
         exit;
     } 
         
@@ -18,5 +18,5 @@
         $statementInsert = $connection->prepare($sqlInsert);
         $statementInsert->execute();
         $statementInsert->setFetchMode(PDO::FETCH_ASSOC);
-    header("Location: http://localhost:8000/single-post.php?post_id=$id&required=true");
+    header("Location: http://localhost:8080/single-post.php?post_id=$id&required=true");
 ?>

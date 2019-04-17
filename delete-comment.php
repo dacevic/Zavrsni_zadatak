@@ -6,5 +6,5 @@
         $statementDelete = $connection->prepare($sqlDelete);
         $statementDelete->execute();
         $statementDelete->setFetchMode(PDO::FETCH_ASSOC);
-    header("Location: http://localhost:8000/single-post.php?post_id=$post_id");
+    header("Location: http://localhost:8080/single-post.php?post_id=$post_id");
 ?>
