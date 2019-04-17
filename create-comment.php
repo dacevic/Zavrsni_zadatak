@@ -1,18 +1,24 @@
 <?php
     include("db.php");
-    if(!empty($_POST)){
+    $id = $_POST['id'];
+    if(!empty($_POST['author'])){
         $author = $_POST['author'];
-        $comment = $_POST['comment'];
-        $id = $_POST['id'];
-        $sqlInsert = "INSERT INTO comments (author, text, post_id) VALUES ('{$author}', '{$comment}', {$id});";
-        var_dump($id);
-        $statementInsert = $connection->prepare($sqlInsert);
-       
-        $statementInsert->execute();
-       
-        $statementInsert->setFetchMode(PDO::FETCH_ASSOC);
-       
+    } else{
+        header("Location: http://localhost:8000/single-post.php?post_id=$id&required=false");
+        exit;
     }
-    header("Location: http://localhost:8080/single-post.php?post_id=$id");
+    if(!empty($_POST['comment'])){
+        $comment = $_POST['comment'];
+    } else {
+        header("Location: http://localhost:8000/single-post.php?post_id=$id&required=false");
+        exit;
+    } 
+        
+        $sqlInsert = "INSERT INTO comments (author, text, post_id) VALUES ('{$author}', '{$comment}', {$id});";
+        $statementInsert = $connection->prepare($sqlInsert);
+        $statementInsert->execute();
+        $statementInsert->setFetchMode(PDO::FETCH_ASSOC);
+    header("Location: http://localhost:8000/single-post.php?post_id=$id&required=true");
+?>
     
 ?>
