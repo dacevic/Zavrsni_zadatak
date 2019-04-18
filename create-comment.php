@@ -18,5 +18,5 @@
         $statementInsert = $connection->prepare($sqlInsert);
         $statementInsert->execute();
         $statementInsert->setFetchMode(PDO::FETCH_ASSOC);
-    header("Location: http://localhost:8080/single-post.php?post_id=$id&required=true");
+    header("Location: http://localhost:8080/single-post.php?post_id=$id&required=");
 ?>

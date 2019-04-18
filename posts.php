@@ -15,4 +15,5 @@
 
         <p><?php echo ($post['body']); ?></p>
     </div><!-- /.blog-post -->
+
 <?php } ;?>
