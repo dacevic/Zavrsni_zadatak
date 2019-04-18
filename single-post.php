@@ -70,8 +70,8 @@ include("db.php");
                 }
             });
         </script>
-        </script>
-        <br/    >
+        
+        <br/>
             <form method="POST" action="create-comment.php" >
                 <?php if (!empty($error) && $error !== "false") {?>
                     <span class="alert alert-danger"><?php echo $error ; ?></span>
